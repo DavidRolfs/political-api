@@ -17,16 +17,13 @@ export class PropublicaApiService {
       { headers: headers });
   }
 
-  // GetAllBills(){
-  //   let headers = new Headers();
-  //   headers.append('X-API-Key', 'PROPUBLICA_API_KEY');
-  //   this.http.get('https://api.propublica.org/congress/v1/115/both/bills/introduced.json',
-  //     { headers: headers }
-  //   ).subscribe(response => {
-  //     console.log(response.json());
-  //   });
-  // }
-  //
+  GetAllBills(){
+    let headers = new Headers();
+    headers.append('X-API-Key', apiKey);
+    return this.http.get('https://api.propublica.org/congress/v1/115/house/bills/introduced.json',
+      { headers: headers });
+    }
+
   GetAllCommittees(){
     let headers = new Headers();
     headers.append('X-API-Key', apiKey);
