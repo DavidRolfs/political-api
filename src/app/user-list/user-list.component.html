@@ -1,0 +1,5 @@
+<h1>Your Saved Bills:</h1>
+<div *ngFor="let bill of savedBills | async">
+  <p>{{bill.title}} | {{bill.committees}} | {{bill.sponsor_name}} | {{bill.introduced_date}} | {{bill.summary}} | {{bill.govtrack_url}}</p>
+</div>
+<a routerLink=''>Back home</a>

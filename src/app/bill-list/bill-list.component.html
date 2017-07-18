@@ -1,4 +1,5 @@
 <div *ngFor="let bill of bills">
   <li>{{bill.title}}, {{bill.committees}}</li>
+  <button (click)="billSave()">Save Bill</button>
 </div>
 <button (click)="GetBills()">Get All Bills</button>

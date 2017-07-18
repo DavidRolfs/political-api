@@ -9,6 +9,17 @@ import { CommitteeInfoComponent } from './committee-info/committee-info.componen
 import { BillInfoComponent } from './bill-info/bill-info.component';
 import { Headers } from '@angular/http';
 import { BillListComponent } from './bill-list/bill-list.component';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { UserListComponent } from './user-list/user-list.component';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -16,12 +27,15 @@ import { BillListComponent } from './bill-list/bill-list.component';
     LegislatorInfoComponent,
     CommitteeInfoComponent,
     BillInfoComponent,
-    BillListComponent
+    BillListComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
