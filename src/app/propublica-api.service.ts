@@ -39,8 +39,8 @@ export class PropublicaApiService {
       { headers: headers })
     .subscribe(response => {
       const responseAsJson = response.json();
-      for(let bill of responseAsJson.bills) {
-        let foundBill = new Bill(title, committees, sponsor_name, introduced_date, summary, govtrack_url);
+      for(let bill of responseAsJson.results[0].bills) {
+        let foundBill = new Bill(bill.title, bill.committees, bill.sponsor_name, introduced_date, summary, govtrack_url);
         this.billSaveService.addBill(foundBill);
       }
     });

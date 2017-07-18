@@ -13,6 +13,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { UserListComponent } from './user-list/user-list.component';
+import { PropublicaApiService } from './propublica-api.service';
+import { BillSaveService } from './bill-save.service';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -37,7 +39,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [BillSaveService, PropublicaApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
