@@ -1,3 +1,4 @@
-<p>
-  legislator-info works!
-</p>
+<div *ngFor="let senator of senators">
+  <li>{{senator.first_name}}, {{senator.last_name}}, {{senator.phone}}, {{senator.state}}</li>
+</div>
+<button (click)="GetSenatorList()">Get All Senators</button>

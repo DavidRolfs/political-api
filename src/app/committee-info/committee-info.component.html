@@ -1,3 +1,3 @@
-<p>
-  committee-info works!
-</p>
+<div *ngFor="let committee of committees">
+  <li>{{committee.name}}, {{committee.phone}}, {{committee.state}}</li>
+</div>
