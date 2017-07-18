@@ -1,3 +1,4 @@
 <div *ngFor="let committee of committees">
-  <li>{{committee.name}}, {{committee.phone}}, {{committee.state}}</li>
+  <li>{{committee.name}}, {{committee.chair}}</li>
 </div>
+<button (click)="GetCommittee()">Get All Committees</button>

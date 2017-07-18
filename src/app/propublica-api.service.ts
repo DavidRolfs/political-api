@@ -27,13 +27,10 @@ export class PropublicaApiService {
   //   });
   // }
   //
-  // GetAllCommittees(){
-  //   let headers = new Headers();
-  //   headers.append('X-API-Key', 'PROPUBLICA_API_KEY');
-  //   this.http.get('https://api.propublica.org/joint/v1/115/committees.json',
-  //     { headers: headers }
-  //   ).subscribe(response => {
-  //     console.log(response.json());
-  //   });
-  // }
+  GetAllCommittees(){
+    let headers = new Headers();
+    headers.append('X-API-Key', apiKey);
+    return this.http.get('https://api.propublica.org/congress/v1/115/house/committees.json',
+      { headers: headers });
+  }
 }
